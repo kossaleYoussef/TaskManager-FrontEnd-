@@ -1,0 +1,85 @@
+@import '../../../main-styles.scss';
+.login-form{
+  width: 360px;
+  background: white;
+  height: 500px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  position: relative;
+  padding-top: 40px;
+  //box-shadow: 0 4px 4px 6px rgba(0, 0, 0, 0.164);
+  h1{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: lighten($red, 8);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .txtb{
+    border-bottom: 2px solid #adadad;
+    width: 80%;
+    position: relative;
+    margin: 25px 0;
+
+    input{
+      font-size: 15px;
+      color: #333;
+      border: none;
+      width: 100%;
+      outline: none;
+      background: none;
+      padding: 0 5px;
+      height: 30px;
+      &:focus + span::before,&:valid + span::before{
+        top: -30%;
+        color: lighten($red,7)
+      }
+      &:focus + span::after,&:valid + span::after{
+        width: 100%;
+      }
+
+    }
+    span::before{
+      content: attr(data-placeholder);
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      color: #adadad;
+      transform: translateY(-50%);
+      transition: .5s;
+      pointer-events: none;
+    }
+    span::after{
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(45deg, lighten($red,10), lighten($blue,10));
+      left: 0;
+      top: 100%;
+      transition: .5s;
+    }
+  }
+  .logbtn{
+    display: block;
+    width: 80%;
+    margin: 30px 0;
+    transition: 0.8s;
+    background: linear-gradient(120deg, lighten($blue,10),lighten($red,10),lighten($blue,10));
+    border: 0;
+    color: white;
+    background-size: 200%;
+    &:hover{
+      background-position: right;
+    }
+  }
+}
+
+

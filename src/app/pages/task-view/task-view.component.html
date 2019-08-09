@@ -8,20 +8,13 @@
       </h3>
       <div class="list-menu">
 
-        <a class="list-menu-item is-active">
-          <p>list1 hjghthtfrfghfghfdghfdgdfgdfgdfgdgfgfdf</p>
+        <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists',list._id]" routerLinkActive="is-active">
+          <p>{{list.title}}</p>
         </a>
 
-        <a class="list-menu-item">
-          <p>list2</p>
-        </a>
-
-        <a class="list-menu-item">
-          <p>list3</p>
-        </a>
       </div>
 
-      <button class="add-list" (click)="createNewList()"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;LIST</button>
+      <button class="add-list" routerLink="/new-list"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;LIST</button>
     </div>
 
     <div class="tasks-list-container">
@@ -29,17 +22,13 @@
         Tasks
       </h3>
 
-        <div class="task">
-          <p>Something to do Here</p>
-        </div>
+      <div class="task" *ngFor="let task of tasks" (click)="completeTask(task)" [ngClass]="{'complete': task.completed}">
+        <p>{{task.title}}</p>
+      </div>
 
-        <div class="task">
-          <p>Something to do Here</p>
-        </div>
+      <button class="circle-add button" routerLink="./new-task"><i class="fas fa-plus"></i></button>
 
-        <div class="task complete">
-          <p>Something to do Here</p>
-        </div>
+
 
     </div>
 

@@ -1,11 +1,11 @@
 <div class="centered-content">
   <div class="modal-box">
     <h6 class="title">
-      CREATE A NEW LIST
+      CREATE A NEW TASK
     </h6>
     <br>
       <p class="control is-expanded">
-        <input #ListTitle class="input" type="text" placeholder="Write list title">
+        <input #TaskTitle class="input" type="text" placeholder="Write a task">
       </p>
       <div class="buttons">
         <p class="control">
@@ -15,7 +15,7 @@
             &nbsp;&nbsp;BACK
           </a>
 
-          <a class="button is-info" (click)="createList(ListTitle.value)">
+          <a class="button is-info" (click)="createTask(TaskTitle.value)">
             <i class="fas fa-check"></i>&nbsp;&nbsp;CREATE
           </a>
         </p>
