@@ -32,4 +32,12 @@ export class TaskService {
   complete(task: Task) {
     return this.webReqService.patch(`lists/${task._listId}/tasks/${task._id}`, {completed: !task.completed});
   }
+
+  deleteList(listId: string) {
+    return this.webReqService.delete(`lists/${listId}`);
+  }
+
+  updateList(listId: string, title: string) {
+    return this.webReqService.patch(`lists/${listId}`, {title});
+  }
 }

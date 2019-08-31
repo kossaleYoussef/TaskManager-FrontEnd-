@@ -1,0 +1,21 @@
+<div class="centered-content">
+  <form action="" class="login-form">
+    <h1>Sign Up</h1>
+
+    <div class="txtb">
+      <input #usernameInput type="text" required minlength="3">
+      <span data-placeholder="Username"></span>
+    </div>
+
+    <div class="txtb">
+      <input #passwordInput type="password" required minlength="6">
+      <span data-placeholder="Password"></span>
+    </div>
+
+    <input type="button" class="button logbtn" value="CREATE" (click)="signupButtonClick(usernameInput.value, passwordInput.value)">
+
+    <div class="bottom-text">
+      Already have an account ?! <a routerLink="/login">Log in</a> now
+    </div>
+  </form>
+</div>

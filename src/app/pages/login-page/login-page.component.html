@@ -3,19 +3,19 @@
       <h1>Login</h1>
 
       <div class="txtb">
-        <input type="text" required minlength="3">
+        <input #usernameInput type="text" required minlength="3">
         <span data-placeholder="Username"></span>
       </div>
 
       <div class="txtb">
-        <input type="password" required minlength="6">
+        <input #passwordInput type="password" required minlength="6">
         <span data-placeholder="Password"></span>
       </div>
 
-      <input type="submit" class="button logbtn" value="CONNECT">
+      <input type="button" class="button logbtn" value="CONNECT" (click)="loginButtonClick(usernameInput.value, passwordInput.value)">
 
       <div class="bottom-text">
-        Don't have Account ?! <a href="#">Sign up</a> now
+        Don't have Account ?! <a routerLink="/signup">Sign up</a> now
       </div>
     </form>
 </div>
